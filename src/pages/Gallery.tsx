@@ -8,6 +8,26 @@ const Gallery = () => {
   // Using the newly uploaded images
   const photos = [
     {
+      src: "/lovable-uploads/49410170-268d-4fe7-9559-87978c2ba0bf.png",
+      alt: "Couple in forest with white and green outfits"
+    },
+    {
+      src: "/lovable-uploads/57a6d026-da94-4366-8f6e-d29d3051b033.png",
+      alt: "Couple in formal wear with saree"
+    },
+    {
+      src: "/lovable-uploads/6a24179e-c50a-472d-bd5b-c7cf20579956.png",
+      alt: "Couple walking in forest path"
+    },
+    {
+      src: "/lovable-uploads/4da5e79c-2b4c-4b25-9198-cf55e09f8233.png",
+      alt: "Couple walking among trees"
+    },
+    {
+      src: "/lovable-uploads/a29801c5-b1d8-428c-b304-5aa4f433f471.png",
+      alt: "Couple on beach pointing"
+    },
+    {
       src: "/lovable-uploads/sally.jpg",
       alt: "Wedding photo - couple"
     },
@@ -22,40 +42,20 @@ const Gallery = () => {
     {
       src: "/lovable-uploads/zakas.jpg",
       alt: "Wedding photo - couple"
-    },
-    {
-      src: "/lovable-uploads/sabrina.jpg",
-      alt: "Wedding photo - engaged couple"
-    },
-    {
-      src: "/lovable-uploads/samy.jpg",
-      alt: "Wedding photo - engaged couple"
-    },
-    {
-      src: "/lovable-uploads/roman.jpg",
-      alt: "Wedding photo - outdoors"
-    },
-    {
-      src: "/lovable-uploads/rob.jpg",
-      alt: "Wedding photo - ceremony"
-    },
-    {
-      src: "/lovable-uploads/retto.jpg", 
-      alt: "Wedding photo - couple"
     }
   ];
 
   const engagementPhotos = [
     {
-      src: "/lovable-uploads/rachel.jpg",
+      src: "/lovable-uploads/sabrina.jpg",
       alt: "Engagement photo - couple"
     },
     {
-      src: "/lovable-uploads/peter.jpg",
+      src: "/lovable-uploads/samy.jpg",
       alt: "Engagement photo - couple"
     },
     {
-      src: "/lovable-uploads/ramil.jpg",
+      src: "/lovable-uploads/roman.jpg",
       alt: "Engagement photo - couple outdoors"
     },
     {

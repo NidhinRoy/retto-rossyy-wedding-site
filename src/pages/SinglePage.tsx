@@ -1,11 +1,12 @@
+
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
 import Countdown from '../components/Countdown';
 import PhotoGallery from '../components/PhotoGallery';
 import TimelineEvent from '../components/TimelineEvent';
-import { Link } from 'react-router-dom';
-import { Heart, Calendar, MapPin, Clock, Mail, Phone, Home, Send, Check, ArrowRight, ChevronDown } from 'lucide-react';
+import { Heart, Calendar, MapPin, Clock, Mail, Phone, Home, Send, Check } from 'lucide-react';
 import { toast } from 'sonner';
 
 const SinglePage = () => {
@@ -46,28 +47,28 @@ const SinglePage = () => {
   // Updated photos with new uploads
   const photos = [
     {
-      src: "/lovable-uploads/sally.jpg",
-      alt: "Retto and Rossy wedding photo"
+      src: "/lovable-uploads/49410170-268d-4fe7-9559-87978c2ba0bf.png",
+      alt: "Couple in forest with white outfits"
+    },
+    {
+      src: "/lovable-uploads/57a6d026-da94-4366-8f6e-d29d3051b033.png",
+      alt: "Couple in formal wear with saree"
+    },
+    {
+      src: "/lovable-uploads/6a24179e-c50a-472d-bd5b-c7cf20579956.png",
+      alt: "Couple walking in forest path"
+    },
+    {
+      src: "/lovable-uploads/4da5e79c-2b4c-4b25-9198-cf55e09f8233.png",
+      alt: "Couple walking among trees" 
+    },
+    {
+      src: "/lovable-uploads/a29801c5-b1d8-428c-b304-5aa4f433f471.png",
+      alt: "Couple on beach pointing"
     },
     {
       src: "/lovable-uploads/robert.jpg",
-      alt: "Retto and Rossy wedding photo"
-    },
-    {
-      src: "/lovable-uploads/sabrina.jpg",
-      alt: "Retto and Rossy wedding photo"
-    },
-    {
-      src: "/lovable-uploads/peter.jpg",
-      alt: "Retto and Rossy wedding photo"
-    },
-    {
-      src: "/lovable-uploads/rachel.jpg",
-      alt: "Retto and Rossy wedding photo"
-    },
-    {
-      src: "/lovable-uploads/ramil.jpg",
-      alt: "Retto and Rossy wedding photo"
+      alt: "Wedding photo"
     }
   ];
 
@@ -100,13 +101,13 @@ const SinglePage = () => {
   };
 
   return (
-    <Layout fullHeight>
+    <Layout fullHeight singlePage={true}>
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ 
-            backgroundImage: "url('/lovable-uploads/sally.jpg')",
+            backgroundImage: "url('/lovable-uploads/4da5e79c-2b4c-4b25-9198-cf55e09f8233.png')",
             filter: "brightness(0.85)"
           }}
         ></div>
@@ -147,14 +148,6 @@ const SinglePage = () => {
             <Countdown weddingDate={weddingDate} />
           </div>
         </div>
-        
-        <button 
-          onClick={() => scrollToSection('our-story')}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30 text-white animate-bounce"
-          aria-label="Scroll down"
-        >
-          <ChevronDown size={32} />
-        </button>
       </section>
       
       {/* Our Story */}
@@ -168,7 +161,7 @@ const SinglePage = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
             <div className="w-full lg:w-1/2">
               <img 
-                src="/lovable-uploads/robert.jpg" 
+                src="/lovable-uploads/57a6d026-da94-4366-8f6e-d29d3051b033.png" 
                 alt="Retto and Rossy love story" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />
@@ -304,6 +297,15 @@ const SinglePage = () => {
               Our Moments
             </h3>
             <PhotoGallery photos={photos} columns={3} />
+            <div className="mt-8 text-center">
+              <Link 
+                to="/gallery"
+                className="inline-block bg-wedding-gold text-wedding-navy px-6 py-3 rounded-full font-medium
+                  hover:bg-wedding-gold/90 transition-colors duration-300"
+              >
+                View Full Gallery
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -378,7 +380,7 @@ const SinglePage = () => {
             <div className="w-full lg:w-1/2 order-1 lg:order-2">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img 
-                  src="/lovable-uploads/sabrina.jpg" 
+                  src="/lovable-uploads/49410170-268d-4fe7-9559-87978c2ba0bf.png" 
                   alt="Wedding events" 
                   className="w-full h-auto"
                 />
@@ -455,7 +457,7 @@ const SinglePage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="mb-16">
               <img 
-                src="/lovable-uploads/ricky.jpg" 
+                src="/lovable-uploads/6a24179e-c50a-472d-bd5b-c7cf20579956.png" 
                 alt="Retto and Rossy with family" 
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -569,7 +571,7 @@ const SinglePage = () => {
           <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
             <div className="w-full lg:w-1/2">
               <img 
-                src="/lovable-uploads/riana.jpg" 
+                src="/lovable-uploads/a29801c5-b1d8-428c-b304-5aa4f433f471.png" 
                 alt="Retto and Rossy contact" 
                 className="w-full h-auto rounded-lg shadow-lg mb-8"
               />
