@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
@@ -44,30 +43,30 @@ const SinglePage = () => {
     }, 1500);
   };
 
-  // Photos from the provided Google Drive link
+  // Updated photos with new uploads
   const photos = [
     {
-      src: "/lovable-uploads/google-drive-1.jpg",
+      src: "/lovable-uploads/sally.jpg",
       alt: "Retto and Rossy wedding photo"
     },
     {
-      src: "/lovable-uploads/google-drive-2.jpg",
+      src: "/lovable-uploads/robert.jpg",
       alt: "Retto and Rossy wedding photo"
     },
     {
-      src: "/lovable-uploads/google-drive-3.jpg",
+      src: "/lovable-uploads/sabrina.jpg",
       alt: "Retto and Rossy wedding photo"
     },
     {
-      src: "/lovable-uploads/google-drive-4.jpg",
+      src: "/lovable-uploads/peter.jpg",
       alt: "Retto and Rossy wedding photo"
     },
     {
-      src: "/lovable-uploads/google-drive-5.jpg",
+      src: "/lovable-uploads/rachel.jpg",
       alt: "Retto and Rossy wedding photo"
     },
     {
-      src: "/lovable-uploads/google-drive-6.jpg",
+      src: "/lovable-uploads/ramil.jpg",
       alt: "Retto and Rossy wedding photo"
     }
   ];
@@ -107,7 +106,7 @@ const SinglePage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ 
-            backgroundImage: "url('/lovable-uploads/google-drive-1.jpg')",
+            backgroundImage: "url('/lovable-uploads/sally.jpg')",
             filter: "brightness(0.85)"
           }}
         ></div>
@@ -169,7 +168,7 @@ const SinglePage = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
             <div className="w-full lg:w-1/2">
               <img 
-                src="/lovable-uploads/google-drive-2.jpg" 
+                src="/lovable-uploads/robert.jpg" 
                 alt="Retto and Rossy love story" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />
@@ -379,7 +378,7 @@ const SinglePage = () => {
             <div className="w-full lg:w-1/2 order-1 lg:order-2">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img 
-                  src="/lovable-uploads/google-drive-3.jpg" 
+                  src="/lovable-uploads/sabrina.jpg" 
                   alt="Wedding events" 
                   className="w-full h-auto"
                 />
@@ -456,7 +455,7 @@ const SinglePage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="mb-16">
               <img 
-                src="/lovable-uploads/google-drive-4.jpg" 
+                src="/lovable-uploads/ricky.jpg" 
                 alt="Retto and Rossy with family" 
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -570,7 +569,7 @@ const SinglePage = () => {
           <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
             <div className="w-full lg:w-1/2">
               <img 
-                src="/lovable-uploads/google-drive-5.jpg" 
+                src="/lovable-uploads/riana.jpg" 
                 alt="Retto and Rossy contact" 
                 className="w-full h-auto rounded-lg shadow-lg mb-8"
               />

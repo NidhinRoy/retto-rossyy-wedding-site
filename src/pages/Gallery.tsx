@@ -5,31 +5,93 @@ import SectionHeading from '../components/SectionHeading';
 import PhotoGallery from '../components/PhotoGallery';
 
 const Gallery = () => {
-  // In a real project, these would be your actual photos
+  // Using the newly uploaded images
   const photos = [
     {
-      src: "/lovable-uploads/361879de-7ecf-4544-b73a-0392b170a41f.png",
-      alt: "Retto and Rossy at the beach"
+      src: "/lovable-uploads/sally.jpg",
+      alt: "Wedding photo - couple"
     },
     {
-      src: "/lovable-uploads/4682652b-f58c-4040-8212-5f158b0f6cb4.png",
-      alt: "Retto and Rossy in the forest"
+      src: "/lovable-uploads/robert.jpg",
+      alt: "Wedding photo - couple"
     },
     {
-      src: "/lovable-uploads/71e8be5a-ba84-4ed7-9319-117a6ff4bae3.png",
-      alt: "Retto and Rossy photo collage"
+      src: "/lovable-uploads/black.jpg",
+      alt: "Wedding photo - couple"
     },
     {
-      src: "/lovable-uploads/681d650c-fd59-46c1-9ce0-9a5a93ff5f60.png",
-      alt: "Retto and Rossy events"
+      src: "/lovable-uploads/zakas.jpg",
+      alt: "Wedding photo - couple"
     },
     {
-      src: "/lovable-uploads/28cb77dd-e682-44c8-b9d4-ab4b04be096e.png",
-      alt: "Retto and Rossy family"
+      src: "/lovable-uploads/sabrina.jpg",
+      alt: "Wedding photo - engaged couple"
     },
     {
-      src: "/lovable-uploads/4520f37f-baff-49be-a027-56fdd3e14305.png",
-      alt: "Retto and Rossy contact"
+      src: "/lovable-uploads/samy.jpg",
+      alt: "Wedding photo - engaged couple"
+    },
+    {
+      src: "/lovable-uploads/roman.jpg",
+      alt: "Wedding photo - outdoors"
+    },
+    {
+      src: "/lovable-uploads/rob.jpg",
+      alt: "Wedding photo - ceremony"
+    },
+    {
+      src: "/lovable-uploads/retto.jpg", 
+      alt: "Wedding photo - couple"
+    }
+  ];
+
+  const engagementPhotos = [
+    {
+      src: "/lovable-uploads/rachel.jpg",
+      alt: "Engagement photo - couple"
+    },
+    {
+      src: "/lovable-uploads/peter.jpg",
+      alt: "Engagement photo - couple"
+    },
+    {
+      src: "/lovable-uploads/ramil.jpg",
+      alt: "Engagement photo - couple outdoors"
+    },
+    {
+      src: "/lovable-uploads/polana.jpg",
+      alt: "Engagement photo - couple"
+    },
+    {
+      src: "/lovable-uploads/paris.jpg",
+      alt: "Engagement photo - couple"
+    },
+    {
+      src: "/lovable-uploads/ricky.jpg",
+      alt: "Engagement photo - couple"
+    }
+  ];
+
+  const adventurePhotos = [
+    {
+      src: "/lovable-uploads/romeo.jpg",
+      alt: "Adventure photo - vacation"
+    },
+    {
+      src: "/lovable-uploads/rosemary.jpg",
+      alt: "Adventure photo - outdoors"
+    },
+    {
+      src: "/lovable-uploads/randolph.jpg",
+      alt: "Adventure photo - beach"
+    },
+    {
+      src: "/lovable-uploads/riana.jpg",
+      alt: "Adventure photo - travel"
+    },
+    {
+      src: "/lovable-uploads/rafa.jpg",
+      alt: "Adventure photo - travel"
     }
   ];
 
@@ -54,14 +116,14 @@ const Gallery = () => {
               <h3 className="font-script text-3xl text-wedding-navy mb-6 text-center">
                 Our Adventures
               </h3>
-              <PhotoGallery photos={photos.slice().reverse()} columns={3} />
+              <PhotoGallery photos={adventurePhotos} columns={3} />
             </div>
             
             <div>
               <h3 className="font-script text-3xl text-wedding-navy mb-6 text-center">
                 Engagement Photos
               </h3>
-              <PhotoGallery photos={photos} columns={3} />
+              <PhotoGallery photos={engagementPhotos} columns={3} />
             </div>
           </div>
         </div>
