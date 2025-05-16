@@ -1,22 +1,43 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function MusicPlayer() {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef();
 
-  const toggleMusic = () => {
-    if (playing) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
+  // Attempt muted autoplay silently on load (this may fail silently, which is okay)
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.muted = true;
+      audio.play().catch(() => {
+        // Autoplay blocked — will be triggered on button click
+      });
     }
-    setPlaying(!playing);
+  }, []);
+
+  const toggleMusic = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      audio.muted = false; // Unmute on user interaction
+      audio.play().catch((err) => {
+        console.error("Playback failed:", err);
+      });
+      setPlaying(true);
+    }
   };
 
   return (
-    <div className="fixed bottom-4 right-4 bg-white p-2 rounded-full shadow-lg">
-      <audio ref={audioRef} loop src="NidhinRoy/retto-rossyy-wedding-site/public/music/Elvis Presley - Can't Help Falling in Love (Lyrics).mp3" />
-      <button onClick={toggleMusic} className="text-pink-600 font-semibold">
+    <div className="fixed bottom-4 right-4 bg-white border shadow-xl rounded-full px-4 py-2 z-50">
+      <audio ref={audioRef} loop src="/music/song.mp3" />
+      <button
+        onClick={toggleMusic}
+        className="text-pink-600 font-semibold hover:underline"
+      >
         {playing ? "Pause 🎵" : "Play 🎵"}
       </button>
     </div>
