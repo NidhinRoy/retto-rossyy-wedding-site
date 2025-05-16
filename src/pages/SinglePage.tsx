@@ -102,7 +102,7 @@ const SinglePage = () => {
 
   // Function to open directions in Google Maps
   const openDirections = () => {
-    window.open('https://g.co/kgs/prwrUy1', '_blank');
+    window.open('https://maps.app.goo.gl/yNSuGHuzRBJr8yhM9', '_blank');
   };
 
   return (
