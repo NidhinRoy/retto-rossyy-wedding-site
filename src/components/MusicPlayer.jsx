@@ -1,39 +1,28 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 export default function MusicPlayer() {
+  const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
-  const audioRef = useRef();
-
-  // Attempt muted autoplay silently on load (this may fail silently, which is okay)
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      audio.muted = true;
-      audio.play().catch(() => {
-        // Autoplay blocked — will be triggered on button click
-      });
-    }
-  }, []);
 
   const toggleMusic = () => {
     const audio = audioRef.current;
-    if (!audio) return;
 
     if (playing) {
       audio.pause();
       setPlaying(false);
     } else {
-      audio.muted = false; // Unmute on user interaction
-      audio.play().catch((err) => {
-        console.error("Playback failed:", err);
+      audio.muted = false;
+      audio.play().then(() => {
+        setPlaying(true);
+      }).catch((error) => {
+        console.error("Playback failed:", error);
       });
-      setPlaying(true);
     }
   };
 
   return (
-    <div className="fixed bottom-4 right-4 bg-white border shadow-xl rounded-full px-4 py-2 z-50">
-      <audio ref={audioRef} loop src="/music/song.mp3" />
+    <div className="fixed bottom-4 right-4 bg-white px-4 py-2 shadow-xl rounded-full z-50">
+      <audio ref={audioRef} loop muted src="/music/song.mp3" />
       <button
         onClick={toggleMusic}
         className="text-pink-600 font-semibold hover:underline"
