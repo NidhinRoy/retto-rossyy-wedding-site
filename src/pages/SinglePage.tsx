@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
@@ -6,12 +5,13 @@ import SectionHeading from '../components/SectionHeading';
 import Countdown from '../components/Countdown';
 import PhotoGallery from '../components/PhotoGallery';
 import TimelineEvent from '../components/TimelineEvent';
-import { Heart, Calendar, MapPin, Clock, Mail, Phone, Home, Send, Check } from 'lucide-react';
+import { Heart, Calendar, MapPin, Clock, Mail, Phone, Home, Send, Check, ExternalLink } from 'lucide-react';
 import { toast } from 'sonner';
+import { Button } from '@/components/ui/button';
 
 const SinglePage = () => {
-  // Set your wedding date here
-  const weddingDate = new Date('2023-06-25T10:30:00');
+  // Updated wedding date to November 13, 2025
+  const weddingDate = new Date('2025-11-13T10:30:00');
   
   const [formData, setFormData] = useState({
     name: '',
@@ -100,6 +100,11 @@ const SinglePage = () => {
     }
   };
 
+  // Function to open directions in Google Maps
+  const openDirections = () => {
+    window.open('https://g.co/kgs/prwrUy1', '_blank');
+  };
+
   return (
     <Layout fullHeight singlePage={true}>
       {/* Hero Section */}
@@ -123,22 +128,32 @@ const SinglePage = () => {
             <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-white mb-12">
               <div className="flex items-center">
                 <Calendar className="mr-2" size={20} />
-                <span>June 25, 2023</span>
+                <span>November 13, 2025</span>
               </div>
               <div className="hidden md:block h-4 w-px bg-white/50"></div>
               <div className="flex items-center">
                 <MapPin className="mr-2" size={20} />
-                <span>St. Mary's Church, Kottayam</span>
+                <span>St. Mary's Syro-Malabar Catholic Metropolitan Cathedral, Changanassery</span>
               </div>
             </div>
             
-            <button 
-              onClick={() => scrollToSection('events')}
-              className="inline-block bg-wedding-gold text-wedding-navy px-6 py-3 rounded-full font-medium
-                hover:bg-wedding-gold/90 transition-colors duration-300"
-            >
-              Event Details
-            </button>
+            <div className="flex flex-col md:flex-row justify-center gap-4">
+              <button 
+                onClick={() => scrollToSection('events')}
+                className="inline-block bg-wedding-gold text-wedding-navy px-6 py-3 rounded-full font-medium
+                  hover:bg-wedding-gold/90 transition-colors duration-300"
+              >
+                Event Details
+              </button>
+              <button 
+                onClick={openDirections}
+                className="inline-flex items-center bg-white text-wedding-navy px-6 py-3 rounded-full font-medium
+                  hover:bg-white/90 transition-colors duration-300"
+              >
+                <MapPin className="mr-2" size={18} />
+                Get Directions
+              </button>
+            </div>
           </div>
         </div>
         
@@ -392,7 +407,7 @@ const SinglePage = () => {
                     <Calendar className="mr-3 text-wedding-gold shrink-0 mt-1" size={20} />
                     <div>
                       <h4 className="font-medium">Date</h4>
-                      <p>Sunday, June 25, 2023</p>
+                      <p>Thursday, November 13, 2025</p>
                     </div>
                   </div>
                   
@@ -409,7 +424,7 @@ const SinglePage = () => {
                     <MapPin className="mr-3 text-wedding-gold shrink-0 mt-1" size={20} />
                     <div>
                       <h4 className="font-medium">Location</h4>
-                      <p>St. Mary's Church</p>
+                      <p>St. Mary's Syro-Malabar Catholic Metropolitan Cathedral</p>
                       <p>Near Vazhappally Church</p>
                       <p>Changanassery, Kottayam, Kerala</p>
                     </div>
@@ -421,7 +436,7 @@ const SinglePage = () => {
                       <li>Parking is available at the church grounds</li>
                       <li>Dress code: Semi-formal</li>
                       <li>Children are welcome</li>
-                      <li>Please RSVP by June 10, 2023</li>
+                      <li>Please RSVP by October 30, 2025</li>
                     </ul>
                   </div>
                 </div>
@@ -431,7 +446,7 @@ const SinglePage = () => {
                 <h3 className="font-script text-3xl text-wedding-navy mb-4">Location</h3>
                 <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
                   <iframe
-                    title="St. Mary's Church Location"
+                    title="St. Mary's Cathedral Location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.922700176538!2d76.53909871478002!3d9.36492149330817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062d859cf7c915%3A0xc528a57189e00b9e!2sSt.%20Mary&#39;s%20Church!5e0!3m2!1sen!2sin!4v1653947247856!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
@@ -439,6 +454,17 @@ const SinglePage = () => {
                     allowFullScreen
                     loading="lazy"
                   ></iframe>
+                </div>
+                
+                <div className="mt-4 text-center">
+                  <Button 
+                    variant="outline"
+                    className="inline-flex items-center gap-2"
+                    onClick={openDirections}
+                  >
+                    <ExternalLink size={16} />
+                    Get Directions
+                  </Button>
                 </div>
               </div>
             </div>

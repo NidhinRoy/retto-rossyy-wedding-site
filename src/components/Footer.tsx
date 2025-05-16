@@ -14,8 +14,8 @@ const Footer = () => {
           </div>
           
           <div className="text-center mb-4 md:mb-0">
-            <p className="text-sm opacity-80">Wedding Date: June 25, 2023</p>
-            <p className="text-sm opacity-80">St. Mary's Church, Kottayam</p>
+            <p className="text-sm opacity-80">Wedding Date: November 13, 2025</p>
+            <p className="text-sm opacity-80">St. Mary's Syro-Malabar Catholic Metropolitan Cathedral, Changanassery</p>
           </div>
           
           <div className="text-right">
