@@ -137,14 +137,17 @@ const SinglePage = () => {
               </div>
             </div>
             
-            <div className="flex flex-col md:flex-row justify-center gap-4">
+            <div className="flex justify-center items-center gap-4 mb-16">
               <button 
                 onClick={() => scrollToSection('events')}
-                className="inline-block bg-wedding-gold text-wedding-navy px-6 py-3 rounded-full font-medium
+                className="bg-wedding-gold text-wedding-navy px-6 py-3 rounded-full font-medium
                   hover:bg-wedding-gold/90 transition-colors duration-300"
               >
                 Event Details
               </button>
+            </div>
+            
+            <div className="flex justify-center">
               <button 
                 onClick={openDirections}
                 className="inline-flex items-center bg-white text-wedding-navy px-6 py-3 rounded-full font-medium
@@ -157,9 +160,9 @@ const SinglePage = () => {
           </div>
         </div>
         
-        {/* Countdown */}
-        <div className="absolute bottom-8 left-0 right-0 z-20">
-          <div className="container mx-auto px-4">
+        {/* Countdown - Moved down by adding more bottom spacing */}
+        <div className="absolute bottom-4 left-0 right-0 z-20">
+          <div className="container mx-auto px-4 mt-10">
             <Countdown weddingDate={weddingDate} />
           </div>
         </div>
